@@ -3,11 +3,12 @@
 import sys
 import csv
 import subprocess as sub
+import os
 
 from ktoolu_io import readFasta
 from extractFeatures import translate
 
-BLAST_DB = 'grass_proteins.cd95.fa'
+BLAST_DB = os.path.join(os.path.dirname(sys.argv[0]), 'grass_proteins.cd95.fa')
 BLAST_CMD = 'blastx -max_target_seqs 1 -db %s -outfmt "6 std sseqid qstart qend sstart send evalue bitscore qlen slen positive gaps ppos qframe staxids salltitles qseq sseq"' % BLAST_DB
 MARKER_LENGTH = 201
 """
@@ -61,9 +62,9 @@ def reverseComplement(seq):
 def filterBlastHit(blast_hit):
     # print 'FILTERING', blast_hit
     # print float(blast_hit[2]) >= 50, (3 * float(blast_hit[3])) / MARKER_LENGTH >= 0.75
-    return float(blast_hit[2]) >= 50 and (3 * float(blast_hit[3])) / MARKER_LENGTH >= 0.75
+    return float(blast_hit[17]) >= 50 and (3 * float(blast_hit[3])) / MARKER_LENGTH >= 0.5 # 0.75
    
-def predictEffect(seq, blast_hit, ref_allele, alt_allele): 
+def predictEffect(seq, blast_hit, ref_allele, alt_allele, _out): 
     def extractCodon(seq, strand='+'):
         cpos = len(seq[0]) % 3
         if cpos == 0:
@@ -96,7 +97,8 @@ def predictEffect(seq, blast_hit, ref_allele, alt_allele):
     out = [blast_hit[0], blast_hit[12], blast_hit[20], blast_hit[2], abs(float(blast_hit[7])-float(blast_hit[6]))/float(blast_hit[13]), blast_hit[10]]
     mclass = 'nonsense' if translate(alt_codon) == '*' else ('missense' if translate(codon) != translate(alt_codon) else 'silent')
     out.extend([codon, translate(codon), alt_codon, translate(alt_codon), mclass])
-    print '\t'.join(map(str, out))
+    _out.write('\t'.join(map(str, out)) + '\n')
+    _out.flush()
     
 
 
@@ -114,16 +116,21 @@ def readSNPs(_in):
     return snps
 
 def processSNPs(_in):
-   for _id,_seq in readFasta(_in):
-       for pos, ref, alt in snps.get(_id[1:], list()):
-           pos0 = pos - 1
-           seq = _seq[pos0 - 100:pos0], _seq[pos0], _seq[pos0 + 1:pos0 + 101]
-           pr = sub.Popen(BLAST_CMD, shell=True, stdin=sub.PIPE, stderr=sub.PIPE, stdout=sub.PIPE)
-           out, err = pr.communicate('>query_%s\n%s%s%s\n' % (pos, seq[0], seq[1], seq[2]))
-           if out.strip():
-               blast_hit = out.strip().split('\n')[0].split('\t')
-               if filterBlastHit(blast_hit):
-                   predictEffect(seq, blast_hit, ref, alt)
+   with open('scvep.filtered.tsv', 'w') as filtered_out, open('scvep.unfiltered.tsv', 'w') as unfiltered_out:
+       for _id,_seq in readFasta(_in):
+           for pos, ref, alt in snps.get(_id[1:], list()):
+               pos0 = pos - 1
+               seq = _seq[pos0 - 100:pos0], _seq[pos0], _seq[pos0 + 1:pos0 + 101]
+               # unfiltered_out.write('\t'.join((_id, ''.join(seq))) + '\n')
+               pr = sub.Popen(BLAST_CMD, shell=True, stdin=sub.PIPE, stderr=sub.PIPE, stdout=sub.PIPE)
+               out, err = pr.communicate('>query_%s\n%s%s%s\n' % (pos, seq[0], seq[1], seq[2]))
+               unfiltered_out.write(out) #, out.split('\t')[17]
+               unfiltered_out.flush()
+               if out.strip():
+                   blast_hit = out.strip().split('\n')[0].split('\t')
+                   if filterBlastHit(blast_hit):
+                       # print('PASS')
+                       predictEffect(seq, blast_hit, ref, alt, _out=filtered_out)
 
 if __name__ == '__main__':
     snps = readSNPs(sys.stdin)        
