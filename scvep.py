@@ -7,7 +7,7 @@ import os
 import argparse
 from collections import namedtuple
 
-from ktio import readFasta
+from ktio.ktio import readFasta
 
 __author__ = 'Christian Schudoma (cschu)'
 __copyright__ = 'Copyright 2017, Christian Schudoma, Earlham Institute'
