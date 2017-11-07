@@ -4,102 +4,104 @@ import sys
 import csv
 import subprocess as sub
 import os
+import argparse
+from collections import namedtuple
 
-from ktoolu_io import readFasta
-from extractFeatures import translate
+from ktio import readFasta
 
-BLAST_DB = os.path.join(os.path.dirname(sys.argv[0]), 'grass_proteins.cd95.fa')
-BLAST_CMD = 'blastx -max_target_seqs 1 -db %s -outfmt "6 std sseqid qstart qend sstart send evalue bitscore qlen slen positive gaps ppos qframe staxids salltitles qseq sseq"' % BLAST_DB
+__author__ = 'Christian Schudoma (cschu)'
+__copyright__ = 'Copyright 2017, Christian Schudoma, Earlham Institute'
+__license__ = 'MIT'
+__version__ = '0.1a'
+__maintainer__ = 'Christian Schudoma (cschu)'
+__email__ = 'cschu1981@gmail.com'
+
+# BLAST_DB = os.path.join(os.path.dirname(sys.argv[0]), 'grass_proteins.cd95.fa')
+BLAST_CMD = 'blastx -max_target_seqs 1 -db {} -outfmt "6 std sseqid qstart qend sstart send evalue bitscore qlen slen positive gaps ppos qframe staxids salltitles qseq sseq"'
 MARKER_LENGTH = 201
-"""
-query_170686	EMT30199.1	81.818	66	12	0	199	2	385	450	1.76e-19	83.2	gi|475617667|gb|EMT30199.1|	201	1052	59	0	89.39	-3	N/A	Putative disease resistance protein RGA3 [Aegilops tauschii]	DAIFNEMLKDITKNRHSYISDREELEEKLKKSLRGKRFFLILDDLWVKNKNDPQLVEVISPLSVGM	DDIFHEMLKDITGDRHSHISDHEELEEKLKKELHGKRFFLILDDLWVKTKNDPQLEELISPLNVGM
 
-FILTERING ['query_170686', 'EMT30199.1', '81.818', '66', '12', '0', '199', '2', '385', '450', '1.76e-19', '83.2', 'gi|475617667|gb|EMT30199.1|', '201', '1052', '59', '0', '89.39', '-3', 'N/A', 'Putative disease resistance protein RGA3 [Aegilops tauschii]', 'DAIFNEMLKDITKNRHSYISDREELEEKLKKSLRGKRFFLILDDLWVKNKNDPQLVEVISPLSVGM', 'DDIFHEMLKDITGDRHSHISDHEELEEKLKKELHGKRFFLILDDLWVKTKNDPQLEELISPLNVGM']
-True True
-['query_170686', 'EMT30199.1', '81.818', '66', '12', '0', '199', '2', '385', '450', '1.76e-19', '83.2', 'gi|475617667|gb|EMT30199.1|', '201', '1052', '59', '0', '89.39', '-3', 'N/A', 'Putative disease resistance protein RGA3 [Aegilops tauschii]', 'DAIFNEMLKDITKNRHSYISDREELEEKLKKSLRGKRFFLILDDLWVKNKNDPQLVEVISPLSVGM', 'DDIFHEMLKDITGDRHSHISDHEELEEKLKKELHGKRFFLILDDLWVKTKNDPQLEELISPLNVGM'] TCATCCCAACACTGAGCGGAGAGATTACTTCTACCAGCTGTGGGTCATTCTTGTTCTTCACCCAGAGATCATCCAATATCAAGAAGAAACGTTTGCCACGCAATGATTTCTTCAGCTTCTCTTCCAGCTCCTCACGATCTGAAATATAGGAGTGCCGATTTTTGGTAATATCCTTCAGCATTTCATTAAATATAGCATCCA G A
-FILTERING ['query_719213', 'EMT33476.1', '71.212', '66', '19', '0', '3', '200', '756', '821', '1.08e-26', '103', 'gi|475626793|gb|EMT33476.1|', '201', '1051', '53', '0', '80.30', '3', 'N/A', 'Disease resistance RPP8-like protein 3 [Aegilops tauschii]', 'FPLLSFMNISVDRVQPEVDIQILGMFPALRVLRLWANKRRYSCVEMFVVGANAFPCLRECLFSGFL', 'FPLLSSMSIEVDRVRPEVDIQILGKLPALRFLWLWVNKSQHTRVETFVIGANAFPCLRECRFHEFL']
-True True
-['query_719213', 'EMT33476.1', '71.212', '66', '19', '0', '3', '200', '756', '821', '1.08e-26', '103', 'gi|475626793|gb|EMT33476.1|', '201', '1051', '53', '0', '80.30', '3', 'N/A', 'Disease resistance RPP8-like protein 3 [Aegilops tauschii]', 'FPLLSFMNISVDRVQPEVDIQILGMFPALRVLRLWANKRRYSCVEMFVVGANAFPCLRECLFSGFL', 'FPLLSSMSIEVDRVRPEVDIQILGKLPALRFLWLWVNKSQHTRVETFVIGANAFPCLRECRFHEFL'] TGTTTCCCCTCCTCTCCTTCATGAATATTTCAGTGGACAGAGTCCAGCCTGAAGTCGACATTCAGATCCTCGGGATGTTTCCTGCTCTTCGTGTTCTCAGGCTTTGGGCCAACAAACGTAGGTACAGTTGTGTCGAAATGTTCGTTGTTGGCGCTAATGCATTCCCGTGTTTGAGAGAGTGCCTCTTCTCTGGTTTTCTCA G A
-FILTERING ['query_719427', 'EMS54357.1', '77.273', '66', '15', '0', '2', '199', '671', '736', '6.85e-29', '110', 'gi|474071839|gb|EMS54357.1|', '201', '831', '56', '0', '84.85', '2', 'N/A', 'Disease resistance protein RPP13 [Triticum urartu]', 'FPRGAMPMLEILWFHARASDIAGGDLDVSMGHLPSLQQVQVGFWREEGSSSDKCKEDADVLLRHAA', 'FPRRAMSRLEILRFQARSSDIASGDLDVGMGHLPSLQEVRVGLWLEKGSSSDKCKGDADVVLRHAA']
-True True
-['query_719427', 'EMS54357.1', '77.273', '66', '15', '0', '2', '199', '671', '736', '6.85e-29', '110', 'gi|474071839|gb|EMS54357.1|', '201', '831', '56', '0', '84.85', '2', 'N/A', 'Disease resistance protein RPP13 [Triticum urartu]', 'FPRGAMPMLEILWFHARASDIAGGDLDVSMGHLPSLQQVQVGFWREEGSSSDKCKEDADVLLRHAA', 'FPRRAMSRLEILRFQARSSDIASGDLDVGMGHLPSLQEVRVGLWLEKGSSSDKCKGDADVVLRHAA'] GTTTCCACGAGGAGCTATGCCAATGCTTGAAATCCTGTGGTTCCATGCCCGGGCGTCGGATATTGCCGGCGGTGACCTGGATGTCAGCATGGGGCACCTCCCTTCCCTCCAGCAAGTCCAGGTTGGCTTTTGGCGTGAGGAAGGCAGCTCTTCAGATAAGTGCAAGGAGGACGCAGATGTCCTGCTGAGGCATGCAGCGGA C T
-FILTERING ['query_723700', 'EMT21329.1', '98.507', '67', '1', '0', '201', '1', '464', '530', '7.59e-37', '132', 'gi|475589981|gb|EMT21329.1|', '201', '1467', '66', '0', '98.51', '-1', 'N/A', 'Putative disease resistance protein RGA4 [Aegilops tauschii]', 'LSSISDHRGLNKKLKEALRGKRFLLILDDLWVKNKNDQQLEELISPLNVGLKGSKILVTARTKEAAG', 'LPSISDHRGLNKKLKEALRGKRFLLILDDLWVKNKNDQQLEELISPLNVGLKGSKILVTARTKEAAG']
+VariantPosition = namedtuple('VariantPosition', 'pos ref alt'.split(' '))
 
-GGATGCTATATTTAATGAAATGCTGAAGGATATTACCAAAAATCGGCACTCCTATATTTCAGATCGTGAGGAGCTGGAAGAGAAGCTGAAGAAATCATTGCGTGGCAAACGTTTCTTCTTGATATTGGATGATCTCTGGGTGAAGAACAAGAATGACCCACAGCTGGTAGAAGTAATCTCTCCGCTCAGTGTTGGGATGAA
-TCATCCCAACACTGAGCGGAGAGATTACTTCTACCAGCTGTGGGTCATTCTTGTTCTTCACCCAGAGATCATCCAATATCAAGAAGAAACGTTTGCCACG C AATGATTTCTTCAGCTTCTCTTCCAGCTCCTCACGATCTGAAATATAGGAGTGCCGATTTTTGGTAATATCCTTCAGCATTTCATTAAATATAGCATCCA
-marker[1-201]: TCATCCCAACACTGAGCGGAGAGATTACTTCTACCAGCTGTGGGTCATTCTTGTTCTTCACCCAGAGATCATCCAATATCAAGAAGAAACGTTTGCCACGCAATGATTTCTTCAGCTTCTCTTCCAGCTCCTCACGATCTGAAATATAGGAGTGCCGATTTTTGGTAATATCCTTCAGCATTTCATTAAATATAGCATCCA
+codonWheel = { 'AAA': 'K', 'AAC': 'N', 'AAG': 'K', 'AAT': 'N',
+               'ACA': 'T', 'ACC': 'T', 'ACG': 'T', 'ACT': 'T',
+               'AGA': 'R', 'AGC': 'S', 'AGG': 'R', 'AGT': 'S',
+               'ATA': 'I', 'ATC': 'I', 'ATG': 'M', 'ATT': 'I',
+               'CAA': 'Q', 'CAC': 'H', 'CAG': 'Q', 'CAT': 'H',
+               'CCA': 'P', 'CCC': 'P', 'CCG': 'P', 'CCT': 'P',
+               'CGA': 'R', 'CGC': 'R', 'CGG': 'R', 'CGT': 'R',
+               'CTA': 'L', 'CTC': 'L', 'CTG': 'L', 'CTT': 'L',
+               'GAA': 'E', 'GAC': 'D', 'GAG': 'E', 'GAT': 'D',
+               'GCA': 'A', 'GCC': 'A', 'GCG': 'A', 'GCT': 'A',
+               'GGA': 'G', 'GGC': 'G', 'GGG': 'G', 'GGT': 'G',
+               'GTA': 'V', 'GTC': 'V', 'GTG': 'V', 'GTT': 'V',
+               'TAA': '*', 'TAC': 'Y', 'TAG': '*', 'TAT': 'Y',
+               'TCA': 'S', 'TCC': 'S', 'TCG': 'S', 'TCT': 'S',
+               'TGA': '*', 'TGC': 'C', 'TGG': 'W', 'TGT': 'C',
+               'TTA': 'L', 'TTC': 'F', 'TTG': 'L', 'TTT': 'F', }
 
-marker[2-199]: CATCCCAACACTGAGCGGAGAGATTACTTCTACCAGCTGTGGGTCATTCTTGTTCTTCACCCAGAGATCATCCAATATCAAGAAGAAACGTTTGCCACGCAATGATTTCTTCAGCTTCTCTTCCAGCTCCTCACGATCTGAAATATAGGAGTGCCGATTTTTGGTAATATCCTTCAGCATTTCATTAAATATAGCATC
-marker_rc[2-199]: GATGCTATATTTAATGAAATGCTGAAGGATATTACCAAAAATCGGCACTCCTATATTTCAGATCGTGAGGAGCTGGAAGAGAAGCTGAAGAAATCATTGCGTGGCAAACGTTTCTTCTTGATATTGGATGATCTCTGGGTGAAGAACAAGAATGACCCACAGCTGGTAGAAGTAATCTCTCCGCTCAGTGTTGGGATG
-
-blastxseq: DAIFNEMLKDITKNRHSYISDREELEEKLKKSLRGKRFFLILDDLWVKNKNDPQLVEVISPLSVGM
-marker_rc[2-199]_aa:           DAIFNEMLKDITKNRHSYISDREELEEKLKKSLRGKRFFLILDDLWVKNKNDPQLVEVISPLSVGM (identical)
-
-['query_170686', 'EMT30199.1', '81.818', '66', '12', '0', '200', '3', '385', '450', '1.76e-19', '83.2', 'gi|475617667|gb|EMT30199.1|', '201', '1052', '59', '0', '89.39', '-2', 'N/A', 'Putative disease resistance protein RGA3 [Aegilops tauschii]', 'DAIFNEMLKDITKNRHSYISDREELEEKLKKSLRGKRFFLILDDLWVKNKNDPQLVEVISPLSVGM', 'DDIFHEMLKDITGDRHSHISDHEELEEKLKKELHGKRFFLILDDLWVKTKNDPQLEELISPLNVGM'] 
-GGATGCTATATTTAATGAAATGCTGAAGGATATTACCAAAAATCGGCACTCCTATATTTCAGATCGTGAGGAGCTGGAAGAGAAGCTGAAGAAATCATTGCGTGGCAAACGTTTCTTCTTGATATTGGATGATCTCTGGGTGAAGAACAAGAATGACCCACAGCTGGTAGAAGTAATCTCTCCGCTCAGTGTTGGGATGAA
-G T C 
-GGATGCTATATTTAATGAAATGCTGAAGGATATTACCAAAAATCGGCACTCCTATATTTCAGATCGTGAGGAGCTGGAAGAGAAGCTGAAGAAATCATTGTTGGCAAACGTTTCTTCTTGATATTGGATGATCTCTGGGTGAAGAACAAGAATGACCCACAGCTGGTAGAAGTAATCTCTCCGCTCAGTGTTGGGATGAA GCYI**NAEGYYQKSALLYFRS*GAGREAEEIIVGKRFFLILDDLWVKNKNDPQLVEVISPLSVGM -2 1
-
-
-['query_170686', 'EMT30199.1', '81.818', '66', '12', '0', '200', '3', '385', '450', '1.76e-19', '83.2', 'gi|475617667|gb|EMT30199.1|', '201', '1052', '59', '0', '89.39', '-2', 'N/A', 'Putative disease resistance protein RGA3 [Aegilops tauschii]', 'DAIFNEMLKDITKNRHSYISDREELEEKLKKSLRGKRFFLILDDLWVKNKNDPQLVEVISPLSVGM', 'DDIFHEMLKDITGDRHSHISDHEELEEKLKKELHGKRFFLILDDLWVKTKNDPQLEELISPLNVGM']
-TTCATCCCAACACTGAGCGGAGAGATTACTTCTACCAGCTGTGGGTCATTCTTGTTCTTCACCCAGAGATCATCCAATATCAAGAAGAAACGTTTGCCAC-G-CAATGATTTCTTCAGCTTCTCTTCCAGCTCCTCACGATCTGAAATATAGGAGTGCCGATTTTTGGTAATATCCTTCAGCATTTCATTAAATATAGCATCC
-G A 
-GGATGCTATATTTAATGAAATGCTGAAGGATATTACCAAAAATCGGCACTCCTATATTTCAGATCGTGAGGAGCTGGAAGAGAAGCTGAAGAAATCATTG-T-GTGGCAAACGTTTCTTCTTGATATTGGATGATCTCTGGGTGAAGAACAAGAATGACCCACAGCTGGTAGAAGTAATCTCTCCGCTCAGTGTTGGGATGAA DAIFNEMLKDITKNRHSYISDREELEEKLKKSLCGKRFFLILDDLWVKNKNDPQLVEVISPLSVGM -2 1
-
-DAIFNEMLKDITKNRHSYISDREELEEKLKKSLRGKRFFLILDDLWVKNKNDPQLVEVISPLSVGM
-DAIFNEMLKDITKNRHSYISDREELEEKLKKSLCGKRFFLILDDLWVKNKNDPQLVEVISPLSVGM
-"""
+def translate(codon):
+    return codonWheel.get(codon.upper().replace('T', 'U'), 'X')
 
 def reverseComplement(seq):
     """
-    Returns the reverse complement of nucleic acid seqence input.
+    Returns the reverse complement of a nucleic acid sequence input.
     """
     compl= dict(zip('ACGTNRYWSMKBHDV', 'TGCANYRWSKMVDHB'))
     return ''.join([compl[base]
                     for base in seq.upper().replace('U', 'T')])[::-1]
 
+def filterBlastHit(blast_hit, pos_threshold=50, qcov_threshold=0.6, region_length=MARKER_LENGTH):
+    return float(blast_hit[17]) >= pos_threshold and (3 * float(blast_hit[3])) / region_length >= qcov_threshold
 
-def filterBlastHit(blast_hit):
-    # print 'FILTERING', blast_hit
-    # print float(blast_hit[2]) >= 50, (3 * float(blast_hit[3])) / MARKER_LENGTH >= 0.75
-    return float(blast_hit[17]) >= 50 and (3 * float(blast_hit[3])) / MARKER_LENGTH >= 0.5 # 0.75
-   
-def predictEffect(seq, blast_hit, ref_allele, alt_allele, _out): 
+def predictEffect(seq, blast_hit, ref_allele, alt_allele, _out):
     def extractCodon(seq, strand='+'):
+        """
+        due to filtering for qcov > 50% (higher, better), we can
+        use the length of the blast hit on the left flank to determine
+        the codon position of the SNP - assuming that the blast hit
+        represents the actual identity of the region
+        """
         cpos = len(seq[0]) % 3
         if cpos == 0:
+            """ |left flank - qstart| is divisible by 3, i.e. SNP starts a new codon """
             return seq[1] + seq[2][:2], cpos
         elif cpos == 1:
+            """ new codon starts at last position of left flank, SNP center """
             return seq[0][-1] + seq[1] + seq[2][0], cpos
         elif cpos == 2:
+            """ SNP is at position 3 of codon """
             return seq[0][-2:] + seq[1], cpos
-       
+
     frame = int(blast_hit[18])
     qstart, qend = sorted(map(int, blast_hit[6:8]))
-    varseq = seq[0] + seq[1] + seq[2]
-    if qend < qstart:
-        qstart, qend = qend, qstart
-        varseq = reverseComplement(seq[2]) + reverseComplement(seq[1]) + reverseComplement(seq[0])
+    # varseq = seq[0] + seq[1] + seq[2]
 
+    if qend < qstart:
+        """
+         deal with negative strand hits, i.e. swap qstart <-> qend
+        """
+        qstart, qend = qend, qstart
+        # varseq = reverseComplement(seq[2]) + reverseComplement(seq[1]) + reverseComplement(seq[0])
+
+    """
+     filtering assures that we only see regions here that are covered by blast hit
+     hence, qstart is located in left flank and qend in right flank, i.e. SNP is covered as well
+    """
     seq, strand = (seq[0][qstart-1:], seq[1], seq[2][:qend-len(seq[0])-1]), '+'
     if frame < 0:
+        """
+         now take reverse strand if negative frame was hit
+        """
         seq, strand = tuple(reversed(map(reverseComplement, seq))), '-'
         ref_allele, alt_allele = map(reverseComplement, [ref_allele, alt_allele])
- 
+
+    """ codon extraction s. above """
     codon, cpos = extractCodon(seq, strand)
-    alt_codon = list(codon)
-    alt_codon[cpos] = alt_allele
-    alt_codon = ''.join(alt_codon)
-     
-        
-    varseq = seq[0] + seq[1] + seq[2]  
-    # print blast_hit, seq, ref_allele, alt_allele, varseq, translate(varseq), frame, abs(frame)-1, codon, translate(codon), cpos, alt_codon, translate(alt_codon)
+    alt_codon = '{}{}{}'.format(codon[0], alt_allele, codon[2])
     out = [blast_hit[0], blast_hit[12], blast_hit[20], blast_hit[2], abs(float(blast_hit[7])-float(blast_hit[6]))/float(blast_hit[13]), blast_hit[10]]
     mclass = 'nonsense' if translate(alt_codon) == '*' else ('missense' if translate(codon) != translate(alt_codon) else 'silent')
     out.extend([codon, translate(codon), alt_codon, translate(alt_codon), mclass])
-    _out.write('\t'.join(map(str, out)) + '\n')
-    _out.flush()
-    
+    print(*out, sep='\t', file=_out, flush=True)
 
 
 def readVariantPositions(_in):
@@ -109,31 +111,56 @@ def readVariantPositions(_in):
 
 def readSNPs(_in):
     snps = dict()
-    for snp in readVariantPositions(sys.stdin): 
-        if snp[0] not in snps:
-            snps[snp[0]] = list()
-        snps[snp[0]].append((int(snp[1]), snp[3], snp[4]))
+    for snp in readVariantPositions(_in):
+        snps.setdefault(snp[0], list()).append(VariantPosition(int(snp[1]), snp[3], snp[4]))
     return snps
 
-def processSNPs(_in):
-   with open('scvep.filtered.tsv', 'w') as filtered_out, open('scvep.unfiltered.tsv', 'w') as unfiltered_out:
-       for _id,_seq in readFasta(_in):
-           for pos, ref, alt in snps.get(_id[1:], list()):
-               pos0 = pos - 1
-               seq = _seq[pos0 - 100:pos0], _seq[pos0], _seq[pos0 + 1:pos0 + 101]
-               # unfiltered_out.write('\t'.join((_id, ''.join(seq))) + '\n')
-               pr = sub.Popen(BLAST_CMD, shell=True, stdin=sub.PIPE, stderr=sub.PIPE, stdout=sub.PIPE)
-               out, err = pr.communicate('>query_%s\n%s%s%s\n' % (pos, seq[0], seq[1], seq[2]))
-               unfiltered_out.write(out) #, out.split('\t')[17]
-               unfiltered_out.flush()
-               if out.strip():
-                   blast_hit = out.strip().split('\n')[0].split('\t')
-                   if filterBlastHit(blast_hit):
-                       # print('PASS')
-                       predictEffect(seq, blast_hit, ref, alt, _out=filtered_out)
+def processSNPs(_in, args):
+    region_length = 2 * args.flanksize + 1
+
+    with open('{}.filtered.tsv'.format(args.prefix), 'w') as filtered_out, \
+         open('{}.unfiltered.tsv'.format(args.prefix), 'w') as unfiltered_out:
+
+         for _id,_seq in readFasta(_in):
+             for snp in snps.get(_id[1:], list()):
+                 """
+                 pull out flanking regions for each SNP
+                 VCF is 1-based, so transform to base0
+                 |left flank| = |right flank|, e.g. flanksize = 100 -> 2x100 (flanks) + 1 (SNP)
+                 """
+                 pos0 = snp.pos - 1
+                 seq = _seq[pos0 - args.flanksize:pos0], _seq[pos0], _seq[pos0 + 1:pos0 + args.flanksize + 1]
+                 """ blast """
+                 pr = sub.Popen(BLAST_CMD.format(args.blastdb), shell=True, stdin=sub.PIPE, stderr=sub.PIPE, stdout=sub.PIPE)
+                 out, err = pr.communicate('>query_%s\n%s%s%s\n' % (pos, seq[0], seq[1], seq[2]))
+                 print(out, file=unfiltered_out, flush=True)
+
+                 if out.strip():
+                     blast_hit = out.strip().split('\n')[0].split('\t')
+                     if filterBlastHit(blast_hit, region_length=region_length):
+                         """
+                         only filtered blast hits (qcov>=60%, ppos>=50%) are used for prediction,
+                         the former criterion assures that the hit is spread over the whole region
+                         and covers the SNP
+                         """
+                         predictEffect(seq, blast_hit, snp.ref, snp.alt, _out=filtered_out)
+
+
 
 if __name__ == '__main__':
-    snps = readSNPs(sys.stdin)        
-    with open(sys.argv[1]) as seq_in:
-        processSNPs(seq_in) 
-         
+    ap = argparse.ArgumentParser()
+    ap.add_argument('vcf', type=str)
+    ap.add_argument('reference', type=str)
+    ap.add_argument('blastdb', type=str)
+    ap.add_argument('--flanksize', '-f', type=int, default=100)
+    ap.add_argument('--prefix', '-p', type=str, default='scvep')
+    args = ap.parse_args()
+    assert os.path.exists(args.vcf)
+    assert os.path.exists(args.reference)
+    assert os.path.exists(args.blastdb)
+    assert args.flanksize > 50
+
+    with open(args.vcf) as vcf_in:
+        snps = readSNPs(vcf_in)
+    with open(args.reference) as seq_in:
+        processSNPs(seq_in)

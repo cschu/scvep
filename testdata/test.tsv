@@ -1,0 +1,216 @@
+query_170686	gi|475617667|gb|EMT30199.1|	Putative disease resistance protein RGA3 [Aegilops tauschii]	81.818	0.980099502488	1.76e-19	CGT	R	TGT	C	missense
+query_719213	gi|475626793|gb|EMT33476.1|	Disease resistance RPP8-like protein 3 [Aegilops tauschii]	71.212	0.980099502488	1.13e-26	AGG	R	AAG	K	missense
+query_719427	gi|474071839|gb|EMS54357.1|	Disease resistance protein RPP13 [Triticum urartu]	77.273	0.980099502488	6.85e-29	CTC	L	CTT	L	silent
+query_723700	gi|475589981|gb|EMT21329.1|	Putative disease resistance protein RGA4 [Aegilops tauschii]	100.000	0.965174129353	2.02e-36	AAC	N	AAT	N	silent
+query_882277	gi|475626793|gb|EMT33476.1|	Disease resistance RPP8-like protein 3 [Aegilops tauschii]	87.692	0.965174129353	4.29e-33	CTT	L	TTT	F	missense
+query_3942919	gi|475591953|gb|EMT21926.1|	Putative LRR receptor-like serine/threonine-protein kinase [Aegilops tauschii]	81.818	0.980099502488	6.49e-29	GGT	G	AGT	S	missense
+query_3953541	gi|475594532|gb|EMT22712.1|	Putative LRR receptor-like serine/threonine-protein kinase [Aegilops tauschii]	95.522	0.995024875622	4.40e-18	ACT	T	ATT	I	missense
+query_4098926	gi|1149806281|ref|XP_020162921.1|	MDIS1-interacting receptor like kinase 2-like [Aegilops tauschii subsp. tauschii]	89.394	0.980099502488	4.20e-34	TCC	S	TCT	S	silent
+query_4111204	gi|1149711578|ref|XP_020181864.1|	F-box/LRR-repeat protein 14-like [Aegilops tauschii subsp. tauschii]	86.364	0.980099502488	1.03e-37	GTA	V	ATA	I	missense
+query_4116508	gi|475537242|gb|EMT09043.1|	Putative LRR receptor-like serine/threonine-protein kinase [Aegilops tauschii]	98.507	0.995024875622	4.15e-36	GCG	A	GTG	V	missense
+query_4151387	gi|1149820504|ref|XP_020168725.1|	probable leucine-rich repeat receptor-like protein kinase At1g35710 [Aegilops tauschii subsp. tauschii]	80.303	0.980099502488	3.55e-28	AGG	R	AGA	R	silent
+query_4151411	gi|475569537|gb|EMT15790.1|	Putative LRR receptor-like serine/threonine-protein kinase [Aegilops tauschii]	80.303	0.980099502488	2.99e-27	CAG	Q	CAA	Q	silent
+query_4768297	gi|478683577|gb|AGJ50344.1|	gamma-gliadin 5 [Triticum aestivum]	100.000	0.81592039801	7.75e-30	CTA	L	TTA	L	silent
+query_5697477	gi|217426781|gb|ACK44492.1|	Pm3b, partial [Triticum aestivum]	100.000	0.980099502488	4.74e-39	CTG	L	TTG	L	silent
+query_5697480	gi|217426781|gb|ACK44492.1|	Pm3b, partial [Triticum aestivum]	100.000	0.980099502488	1.89e-39	CAA	Q	TAA	*	nonsense
+query_6281500	gi|1149800477|ref|XP_020160664.1|	putative disease resistance protein RGA4 [Aegilops tauschii subsp. tauschii]	96.970	0.980099502488	4.16e-41	CGT	R	TGT	C	missense
+query_6485583	gi|217426781|gb|ACK44492.1|	Pm3b, partial [Triticum aestivum]	87.879	0.980099502488	1.03e-33	GCG	A	ACG	T	missense
+query_7255414	gi|1149800483|ref|XP_020160666.1|	putative disease resistance protein RGA4 [Aegilops tauschii subsp. tauschii]	87.879	0.980099502488	1.13e-35	GCG	A	GCA	A	silent
+query_7255704	gi|551485313|gb|AGY30894.1|	powdery mildew resistance protein PM8 [Triticum aestivum]	98.485	0.980099502488	1.62e-40	CAC	H	TAC	Y	missense
+query_7290333	gi|473895771|gb|EMS48967.1|	Putative disease resistance protein RGA4 [Triticum urartu]	92.424	0.980099502488	1.48e-38	TAC	Y	TAT	Y	silent
+query_7290399	gi|473895771|gb|EMS48967.1|	Putative disease resistance protein RGA4 [Triticum urartu]	87.879	0.980099502488	4.70e-36	AAG	K	AAA	K	silent
+query_8675801	gi|50401177|sp|Q9MBC2.1|MMT1_HORVU	RecName: Full=Methionine S-methyltransferase; AltName: Full=AdoMet:Met S-methyltransferase; AltName: Full=Hv-MMT1	98.214	0.830845771144	1.16e-31	CAC	H	TAC	Y	missense
+query_9270778	gi|1149707843|ref|XP_020180018.1|	12-oxophytodienoate reductase 1-like [Aegilops tauschii subsp. tauschii]	98.485	0.980099502488	6.86e-40	GAC	D	AAC	N	missense
+query_9548445	gi|475559480|gb|EMT13350.1|	Disease resistance protein RPM1 [Aegilops tauschii]	95.385	0.965174129353	2.51e-36	GGC	G	AGC	S	missense
+query_9549199	gi|475559480|gb|EMT13350.1|	Disease resistance protein RPM1 [Aegilops tauschii]	93.939	0.980099502488	9.98e-37	ACG	T	ACA	T	silent
+query_9549253	gi|1149734938|ref|XP_020191955.1|	disease resistance protein RPM1-like [Aegilops tauschii subsp. tauschii]	93.939	0.980099502488	6.63e-37	AGG	R	AGA	R	silent
+query_9549949	gi|475559480|gb|EMT13350.1|	Disease resistance protein RPM1 [Aegilops tauschii]	96.970	0.980099502488	1.10e-37	CTG	L	CTA	L	silent
+query_9703007	gi|473910351|gb|EMS49521.1|	Disease resistance protein RPM1 [Triticum urartu]	87.500	0.950248756219	2.70e-30	CAC	H	CAT	H	silent
+query_10016521	gi|475536174|gb|EMT08877.1|	Disease resistance protein RPM1 [Aegilops tauschii]	87.879	0.980099502488	6.59e-26	AAC	N	AAT	N	silent
+query_10061944	gi|326494570|dbj|BAJ94404.1|	predicted protein [Hordeum vulgare subsp. vulgare]	83.333	0.980099502488	1.37e-29	CGA	R	CAA	Q	missense
+query_13178552	gi|357119252|ref|XP_003561358.1|	PREDICTED: putative disease resistance RPP13-like protein 3 [Brachypodium distachyon]	66.197	0.980099502488	4.53e-24	CAC	H	CAT	H	silent
+query_17761839	gi|1149827181|ref|XP_020171019.1|	DEAD-box ATP-dependent RNA helicase 17 [Aegilops tauschii subsp. tauschii]	100.000	0.860696517413	7.66e-32	TCC	S	TCT	S	silent
+query_17761965	gi|474072519|gb|EMS54423.1|	DEAD-box ATP-dependent RNA helicase 17 [Triticum urartu]	93.939	0.980099502488	3.17e-35	GAC	D	GAT	D	silent
+query_17762506	gi|1149827181|ref|XP_020171019.1|	DEAD-box ATP-dependent RNA helicase 17 [Aegilops tauschii subsp. tauschii]	96.923	0.965174129353	6.83e-39	GAC	D	GAT	D	silent
+query_17762539	gi|1149827181|ref|XP_020171019.1|	DEAD-box ATP-dependent RNA helicase 17 [Aegilops tauschii subsp. tauschii]	100.000	0.980099502488	2.24e-40	AAG	K	AAA	K	silent
+query_17762549	gi|1149827181|ref|XP_020171019.1|	DEAD-box ATP-dependent RNA helicase 17 [Aegilops tauschii subsp. tauschii]	100.000	0.980099502488	1.95e-40	CTA	L	TTA	L	silent
+query_17768293	gi|474072517|gb|EMS54421.1|	hypothetical protein TRIUR3_00722 [Triticum urartu]	89.831	0.875621890547	1.34e-11	CCC	P	CCT	P	silent
+query_17768372	gi|1149827175|ref|XP_020171017.1|	kinetochore protein spc25-like [Aegilops tauschii subsp. tauschii]	88.525	0.905472636816	2.41e-28	ACA	T	ATA	I	missense
+query_17862483	gi|326527371|dbj|BAK04627.1|	predicted protein [Hordeum vulgare subsp. vulgare]	94.828	0.860696517413	1.37e-28	GCG	A	GCA	A	silent
+query_22524714	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	83.333	0.980099502488	3.93e-34	GCC	A	ACC	T	missense
+query_22524971	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	95.455	0.980099502488	3.64e-37	CTC	L	CTT	L	silent
+query_22524977	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	93.939	0.980099502488	2.94e-37	TTG	L	TTA	L	silent
+query_22524992	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	93.939	0.980099502488	1.49e-36	AGC	S	AGT	S	silent
+query_22525002	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	93.939	0.980099502488	4.38e-36	GAG	E	AAG	K	missense
+query_22525059	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	92.424	0.980099502488	8.56e-37	GTA	V	ATA	I	missense
+query_22525933	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	94.030	0.995024875622	3.80e-36	GGA	G	GAA	E	missense
+query_22526121	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	86.567	0.980099502488	2.35e-35	GAA	E	AAA	K	missense
+query_22526607	gi|475605510|gb|EMT26099.1|	hypothetical protein F775_20175 [Aegilops tauschii]	87.879	0.980099502488	9.69e-32	GTT	V	ATT	I	missense
+query_22526619	gi|475605510|gb|EMT26099.1|	hypothetical protein F775_20175 [Aegilops tauschii]	87.879	0.980099502488	2.01e-31	GGC	G	AGC	S	missense
+query_22526636	gi|475605510|gb|EMT26099.1|	hypothetical protein F775_20175 [Aegilops tauschii]	89.394	0.980099502488	1.79e-32	GAG	E	GAA	E	silent
+query_22526804	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	77.612	0.980099502488	1.09e-27	CAC	H	CAT	H	silent
+query_22526811	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	77.612	0.980099502488	3.66e-28	CTC	L	TTC	F	missense
+query_22568162	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	95.522	0.995024875622	8.28e-39	CGG	R	CAG	Q	missense
+query_22568566	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	92.188	0.950248756219	4.92e-22	AGC	S	AAC	N	missense
+query_22569772	gi|475605510|gb|EMT26099.1|	hypothetical protein F775_20175 [Aegilops tauschii]	90.909	0.980099502488	1.43e-33	CAG	Q	CAA	Q	silent
+query_22569790	gi|475605510|gb|EMT26099.1|	hypothetical protein F775_20175 [Aegilops tauschii]	90.909	0.980099502488	1.03e-33	GGC	G	GGT	G	silent
+query_22569881	gi|475605510|gb|EMT26099.1|	hypothetical protein F775_20175 [Aegilops tauschii]	92.424	0.980099502488	1.96e-34	GTT	V	ATT	I	missense
+query_22569893	gi|475605510|gb|EMT26099.1|	hypothetical protein F775_20175 [Aegilops tauschii]	90.909	0.980099502488	1.94e-33	GGC	G	AGC	S	missense
+query_22569976	gi|475605510|gb|EMT26099.1|	hypothetical protein F775_20175 [Aegilops tauschii]	83.333	0.980099502488	3.01e-28	TAC	Y	TAT	Y	silent
+query_22570039	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	76.119	0.980099502488	1.80e-25	GCG	A	GCA	A	silent
+query_22570078	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	79.104	0.980099502488	1.13e-27	CAC	H	CAT	H	silent
+query_22570085	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	77.612	0.980099502488	2.11e-27	CTC	L	TTC	F	missense
+query_22570165	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	83.333	0.980099502488	6.85e-31	CGC	R	CGT	R	silent
+query_24119338	gi|475605510|gb|EMT26099.1|	hypothetical protein F775_20175 [Aegilops tauschii]	85.075	0.995024875622	6.65e-23	ACA	T	ATA	I	missense
+query_24119390	gi|475605510|gb|EMT26099.1|	hypothetical protein F775_20175 [Aegilops tauschii]	81.818	0.980099502488	5.41e-28	GAA	E	AAA	K	missense
+query_24119402	gi|475605510|gb|EMT26099.1|	hypothetical protein F775_20175 [Aegilops tauschii]	81.818	0.980099502488	1.02e-27	GTT	V	ATT	I	missense
+query_24119514	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	90.909	0.980099502488	1.64e-15	GGC	G	GGT	G	silent
+query_24119683	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	95.522	0.995024875622	2.51e-38	ACC	T	ATC	I	missense
+query_24119706	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	95.455	0.980099502488	2.92e-38	TTC	F	TTT	F	silent
+query_24119734	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	97.015	0.995024875622	6.07e-39	CGG	R	CAG	Q	missense
+query_24125322	gi|475605510|gb|EMT26099.1|	hypothetical protein F775_20175 [Aegilops tauschii]	95.455	0.980099502488	6.60e-36	GGC	G	GGT	G	silent
+query_24125538	gi|475508540|gb|EMT05094.1|	Putative disease resistance protein RGA4 [Aegilops tauschii]	95.455	0.980099502488	3.61e-37	GTC	V	GTT	V	silent
+query_24125697	gi|475497822|gb|EMT04038.1|	Putative disease resistance protein RGA1 [Aegilops tauschii]	84.848	0.980099502488	1.01e-35	TTC	F	TTT	F	silent
+query_24125926	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	92.537	0.995024875622	1.36e-35	ACA	T	ATA	I	missense
+query_24126073	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	89.552	0.995024875622	3.84e-35	TCC	S	TTC	F	missense
+query_24126159	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	87.879	0.980099502488	1.25e-36	TTC	F	TTT	F	silent
+query_24126203	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	89.394	0.980099502488	2.39e-24	GAA	E	AAA	K	missense
+query_24126229	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	89.552	0.995024875622	1.96e-24	GGG	G	GAG	E	missense
+query_24126264	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	89.394	0.980099502488	4.60e-23	GAC	D	GAT	D	silent
+query_24126304	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	88.060	0.995024875622	7.70e-22	GGT	G	GAT	D	missense
+query_24126363	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	90.909	0.980099502488	9.80e-34	GAG	E	GAA	E	silent
+query_24126379	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	91.045	0.995024875622	4.27e-35	ACG	T	ATG	M	missense
+query_24126386	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	90.909	0.980099502488	2.33e-34	GGG	G	AGG	R	missense
+query_24126477	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	93.846	0.965174129353	1.09e-36	ACG	T	ACA	T	silent
+query_24126486	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	95.455	0.980099502488	2.75e-38	GGG	G	GGA	G	silent
+query_24126544	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	92.537	0.995024875622	2.42e-24	AGC	S	AAC	N	missense
+query_24126831	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	93.750	0.950248756219	2.28e-34	AGC	S	AGT	S	silent
+query_24127037	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	89.394	0.980099502488	1.08e-33	GAG	E	AAG	K	missense
+query_24127097	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	81.818	0.980099502488	4.21e-32	CGA	R	TGA	*	nonsense
+query_24136893	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	83.333	0.980099502488	1.00e-31	GAA	E	AAA	K	missense
+query_24137737	gi|473942176|gb|EMS50371.1|	Putative disease resistance protein RGA3 [Triticum urartu]	92.424	0.980099502488	7.47e-37	CTC	L	CTT	L	silent
+query_27942724	gi|1149713395|ref|XP_020182734.1|	disease resistance protein RPP13-like [Aegilops tauschii subsp. tauschii]	92.308	0.965174129353	1.61e-33	CTG	L	TTG	L	silent
+query_27942747	gi|1149713395|ref|XP_020182734.1|	disease resistance protein RPP13-like [Aegilops tauschii subsp. tauschii]	90.909	0.980099502488	1.35e-34	GAG	E	GAA	E	silent
+query_29027937	gi|474400990|gb|EMS66072.1|	Disease resistance protein RPM1 [Triticum urartu]	81.967	0.905472636816	1.55e-26	GTG	V	ATG	M	missense
+query_29028123	gi|474445987|gb|EMS68610.1|	Disease resistance protein RPM1 [Triticum urartu]	82.812	0.950248756219	2.48e-27	GAG	E	AAG	K	missense
+query_45649380	gi|1149831341|ref|XP_020172632.1|	putative potassium transporter 12 isoform X1 [Aegilops tauschii subsp. tauschii]	78.082	0.980099502488	1.31e-24	AAC	N	AAT	N	silent
+query_45649469	gi|1149831341|ref|XP_020172632.1|	putative potassium transporter 12 isoform X1 [Aegilops tauschii subsp. tauschii]	93.939	0.980099502488	9.72e-40	GTC	V	ATC	I	missense
+query_60136179	gi|326500272|dbj|BAK06225.1|	predicted protein [Hordeum vulgare subsp. vulgare]	70.000	0.860696517413	2.74e-19	CTT	L	TTT	F	missense
+query_150089028	gi|1149812941|ref|XP_020165520.1|	DNA-directed RNA polymerase IV subunit 1 isoform X1 [Aegilops tauschii subsp. tauschii]	85.075	0.995024875622	5.52e-30	AGT	S	AAT	N	missense
+query_161706886	gi|1149775489|ref|XP_020151473.1|	uncharacterized protein LOC109736676 [Aegilops tauschii subsp. tauschii]	93.846	0.965174129353	7.85e-36	CGT	R	TGT	C	missense
+query_287281243	gi|473888510|gb|EMS48361.1|	WD repeat-containing protein 26 [Triticum urartu]	97.015	0.995024875622	8.46e-40	GCC	A	GTC	V	missense
+query_299904942	gi|474062955|gb|EMS54028.1|	hypothetical protein TRIUR3_13227 [Triticum urartu]	96.970	0.980099502488	3.49e-41	ACG	T	ACA	T	silent
+query_300147817	gi|475597848|gb|EMT23735.1|	hypothetical protein F775_05499 [Aegilops tauschii]	54.545	0.980099502488	3.94e-13	GGA	G	AGA	R	missense
+query_300832063	gi|475616969|gb|EMT29944.1|	UDP-glucose:glycoprotein glucosyltransferase 1 [Aegilops tauschii]	62.121	0.980099502488	7.13e-19	CAG	Q	CAA	Q	silent
+query_300855217	gi|473957828|gb|EMS51006.1|	UDP-glucose:glycoprotein glucosyltransferase 1 [Triticum urartu]	96.154	0.771144278607	2.24e-29	ACA	T	ATA	I	missense
+query_301607557	gi|475621673|gb|EMT31573.1|	Ribonuclease 1 [Aegilops tauschii]	62.264	0.786069651741	2.40e-11	CGG	R	CGA	R	silent
+query_301777841	gi|473889575|gb|EMS48506.1|	putative phosphoribosylformylglycinamidine synthase, chloroplastic/mitochondrial [Triticum urartu]	96.923	0.965174129353	4.51e-15	CGC	R	CGT	R	silent
+query_301778234	gi|473889575|gb|EMS48506.1|	putative phosphoribosylformylglycinamidine synthase, chloroplastic/mitochondrial [Triticum urartu]	100.000	0.980099502488	7.42e-38	GTC	V	GTT	V	silent
+query_301780860	gi|473889575|gb|EMS48506.1|	putative phosphoribosylformylglycinamidine synthase, chloroplastic/mitochondrial [Triticum urartu]	98.485	0.980099502488	4.75e-26	GAT	D	AAT	N	missense
+query_301780893	gi|473889575|gb|EMS48506.1|	putative phosphoribosylformylglycinamidine synthase, chloroplastic/mitochondrial [Triticum urartu]	98.485	0.980099502488	1.63e-25	GAA	E	AAA	K	missense
+query_301781280	gi|473889575|gb|EMS48506.1|	putative phosphoribosylformylglycinamidine synthase, chloroplastic/mitochondrial [Triticum urartu]	96.970	0.980099502488	6.95e-40	GCA	A	ACA	T	missense
+query_301781729	gi|473889575|gb|EMS48506.1|	putative phosphoribosylformylglycinamidine synthase, chloroplastic/mitochondrial [Triticum urartu]	100.000	0.980099502488	1.95e-42	AAC	N	AAT	N	silent
+query_304841083	gi|1149766437|ref|XP_020148153.1|	polyubiquitin-B-like [Aegilops tauschii subsp. tauschii]	96.970	0.980099502488	3.75e-37	GAC	D	GAT	D	silent
+query_304841341	gi|1149766437|ref|XP_020148153.1|	polyubiquitin-B-like [Aegilops tauschii subsp. tauschii]	100.000	0.980099502488	4.09e-40	TGC	C	TGT	C	silent
+query_305634070	gi|474247068|gb|EMS60026.1|	Transportin-3 [Triticum urartu]	68.657	0.995024875622	2.05e-20	TGA	*	TAA	*	nonsense
+query_305634099	gi|474247068|gb|EMS60026.1|	Transportin-3 [Triticum urartu]	68.182	0.980099502488	3.89e-20	TGC	C	TGT	C	silent
+query_306992276	gi|326531984|dbj|BAK01368.1|	predicted protein [Hordeum vulgare subsp. vulgare]	53.846	0.965174129353	4.64e-11	GAT	D	AAT	N	missense
+query_308469591	gi|1149719206|ref|XP_020185600.1|	putative pentatricopeptide repeat-containing protein At1g13630 [Aegilops tauschii subsp. tauschii]	95.455	0.980099502488	2.48e-36	AAG	K	AAA	K	silent
+query_308470051	gi|1149719206|ref|XP_020185600.1|	putative pentatricopeptide repeat-containing protein At1g13630 [Aegilops tauschii subsp. tauschii]	96.970	0.980099502488	1.55e-38	GCT	A	ACT	T	missense
+query_308470187	gi|1149719206|ref|XP_020185600.1|	putative pentatricopeptide repeat-containing protein At1g13630 [Aegilops tauschii subsp. tauschii]	89.474	0.845771144279	1.31e-29	AGA	R	AAA	K	missense
+query_314127666	gi|474100613|gb|EMS55239.1|	hypothetical protein TRIUR3_18664 [Triticum urartu]	96.226	0.786069651741	1.31e-30	TTC	F	TTT	F	silent
+query_314306322	gi|1142853682|gb|ONM52166.1|	Coatomer subunit gamma [Zea mays]	96.721	0.905472636816	1.50e-26	ATC	I	ATT	I	silent
+query_314308338	gi|222624501|gb|EEE58633.1|	hypothetical protein OsJ_09998 [Oryza sativa Japonica Group]	56.061	0.980099502488	9.35e-12	CTT	L	TTT	F	missense
+query_314308426	gi|475513660|gb|EMT05643.1|	Coatomer subunit gamma-2 [Aegilops tauschii]	86.538	0.771144278607	4.08e-22	AAG	K	AAA	K	silent
+query_316326145	gi|474427864|gb|EMS67821.1|	Xaa-Pro aminopeptidase 1 [Triticum urartu]	96.970	0.980099502488	5.86e-37	GAG	E	AAG	K	missense
+query_316884927	gi|728620185|gb|JAF16140.1|	hypothetical protein [Arundo donax]	55.769	0.771144278607	3.07e-12	GCG	A	GCA	A	silent
+query_316929468	gi|475556804|gb|EMT12705.1|	hypothetical protein F775_52255 [Aegilops tauschii]	100.000	0.980099502488	2.25e-40	CTG	L	CTA	L	silent
+query_316929501	gi|475556804|gb|EMT12705.1|	hypothetical protein F775_52255 [Aegilops tauschii]	98.485	0.980099502488	1.80e-40	CAG	Q	CAA	Q	silent
+query_317412243	gi|1149789645|ref|XP_020156505.1|	pentatricopeptide repeat-containing protein At1g09820-like [Aegilops tauschii subsp. tauschii]	96.970	0.980099502488	3.75e-40	GTT	V	ATT	I	missense
+query_323586405	gi|1149812241|ref|XP_020165244.1|	serine carboxypeptidase-like [Aegilops tauschii subsp. tauschii]	77.778	0.756218905473	1.20e-21	GCT	A	ACT	T	missense
+query_325364099	gi|474425172|gb|EMS67686.1|	Myosin-J heavy chain [Triticum urartu]	60.606	0.980099502488	2.79e-16	ACG	T	ACA	T	silent
+query_325364419	gi|475565185|gb|EMT14738.1|	Myosin-2 heavy chain [Aegilops tauschii]	62.121	0.980099502488	1.35e-18	GCT	A	ACT	T	missense
+query_326463668	gi|475576703|gb|EMT17614.1|	DNA-directed RNA polymerase I subunit RPA2 [Aegilops tauschii]	82.090	0.995024875622	2.13e-31	AGC	S	AAC	N	missense
+query_326474825	gi|475553232|gb|EMT11950.1|	Subtilisin-like protease [Aegilops tauschii]	97.015	0.995024875622	8.03e-39	GCG	A	GTG	V	missense
+query_349909216	gi|475384825|gb|EMT00669.1|	Phospholipase D beta 1 [Aegilops tauschii]	100.000	0.786069651741	1.75e-32	GCA	A	ACA	T	missense
+query_358712466	gi|475606669|gb|EMT26466.1|	Tubulin-specific chaperone D [Aegilops tauschii]	98.113	0.786069651741	6.14e-27	AGG	R	AGA	R	silent
+query_375390884	gi|323146304|gb|ADX32484.1|	Dreb2, partial [Secale cereale]	83.582	0.995024875622	4.86e-32	GGC	G	GAC	D	missense
+query_377899584	gi|474105144|gb|EMS55390.1|	putative plastid-lipid-associated protein 3, chloroplastic [Triticum urartu]	100.000	0.935323383085	5.57e-20	TCG	S	TTG	L	missense
+query_381724185	gi|326515028|dbj|BAJ99875.1|	predicted protein, partial [Hordeum vulgare subsp. vulgare]	93.939	0.980099502488	7.98e-36	CGC	R	CGT	R	silent
+query_383800983	gi|475521546|gb|EMT06636.1|	Choline-phosphate cytidylyltransferase B [Aegilops tauschii]	52.459	0.905472636816	4.22e-11	GAT	D	AAT	N	missense
+query_384663509	gi|474097225|gb|EMS55130.1|	Wall-associated receptor kinase 3 [Triticum urartu]	95.455	0.980099502488	5.81e-37	CGC	R	TGC	C	missense
+query_388267692	gi|1149756611|ref|XP_020200092.1|	phagocyte signaling-impaired protein isoform X1 [Aegilops tauschii subsp. tauschii]	98.276	0.860696517413	2.71e-30	ACG	T	ATG	M	missense
+query_408770466	gi|1149740843|ref|XP_020194167.1|	dynamin-related protein 1E-like [Aegilops tauschii subsp. tauschii]	95.455	0.980099502488	8.67e-39	GTG	V	ATG	M	missense
+query_409113266	gi|474205099|gb|EMS58677.1|	hypothetical protein TRIUR3_13511 [Triticum urartu]	98.182	0.81592039801	2.12e-29	GAG	E	GAA	E	silent
+query_418154175	gi|475626503|gb|EMT33362.1|	hypothetical protein F775_29700 [Aegilops tauschii]	100.000	0.786069651741	2.54e-30	GTA	V	ATA	I	missense
+query_420579506	gi|237846394|gb|ACR22834.1|	dehydration responsive factor 1, partial [Aegilops speltoides var. speltoides]	94.030	0.995024875622	2.24e-37	ACA	T	ATA	I	missense
+query_428269697	gi|960471196|ref|XP_014755144.1|	PREDICTED: protein DEHYDRATION-INDUCED 19 homolog 2 isoform X3 [Brachypodium distachyon]	93.939	0.980099502488	8.79e-37	GAC	D	GAT	D	silent
+query_428269903	gi|475492449|gb|EMT03632.1|	hypothetical protein F775_32245 [Aegilops tauschii]	98.148	0.800995024876	5.25e-08	CGC	R	TGC	C	missense
+query_429625699	gi|475572767|gb|EMT16584.1|	Phospholipase D p1 [Aegilops tauschii]	59.091	0.980099502488	1.34e-17	CAG	Q	TAG	*	nonsense
+query_431783775	gi|1149698439|ref|XP_020148324.1|	glyoxysomal fatty acid beta-oxidation multifunctional protein MFP-a-like [Aegilops tauschii subsp. tauschii]	57.895	0.845771144279	1.26e-09	ACC	T	ACT	T	silent
+query_433102442	gi|474440989|gb|EMS68409.1|	LRR receptor-like serine/threonine-protein kinase FLS2 [Triticum urartu]	93.939	0.980099502488	1.21e-33	TCC	S	TCT	S	silent
+query_444644910	gi|728692987|gb|JAF51523.1|	hypothetical protein [Arundo donax]	89.552	0.995024875622	6.89e-39	CGG	R	CAG	Q	missense
+query_446788639	gi|473786053|gb|EMS46170.1|	Protein N-terminal glutamine amidohydrolase [Triticum urartu]	88.889	0.800995024876	1.45e-27	GGT	G	GAT	D	missense
+query_464695622	gi|474417492|gb|EMS67275.1|	Secologanin synthase [Triticum urartu]	97.015	0.995024875622	3.19e-26	GCC	A	GTC	V	missense
+query_498290902	gi|474340509|gb|EMS62654.1|	hypothetical protein TRIUR3_17374 [Triticum urartu]	95.522	0.995024875622	7.43e-40	AGA	R	AAA	K	missense
+query_507984628	gi|1149813207|ref|XP_020165647.1|	aldo-keto reductase family 4 member C9-like [Aegilops tauschii subsp. tauschii]	98.305	0.875621890547	1.16e-33	TCT	S	TTT	F	missense
+query_517347329	gi|1142645988|gb|AQK40974.1|	AICARFT/IMPCHase bienzyme family protein [Zea mays]	92.593	0.800995024876	4.57e-30	GGT	G	AGT	S	missense
+query_517614050	gi|1149841890|ref|XP_020176768.1|	uncharacterized protein LOC109762339 [Aegilops tauschii subsp. tauschii]	100.000	0.980099502488	4.22e-39	GAC	D	AAC	N	missense
+query_529011525	gi|473880431|gb|EMS47962.1|	Ribonuclease P protein subunit p29 [Triticum urartu]	88.060	0.995024875622	3.82e-31	CCG	P	CTG	L	missense
+query_547634166	gi|510946921|gb|AGN53445.1|	stress-induced receptor-like kinase A1du [Triticum turgidum subsp. durum]	94.643	0.830845771144	2.29e-22	CTA	L	TTA	L	silent
+query_549046602	gi|728687997|gb|JAF49028.1|	hypothetical protein [Arundo donax]	87.097	0.92039800995	3.07e-37	CCT	P	CTT	L	missense
+query_566006932	gi|960465879|ref|XP_014754034.1|	PREDICTED: jacalin-related lectin 3-like [Brachypodium distachyon]	96.226	0.786069651741	3.73e-36	CGT	R	CAT	H	missense
+query_566247551	gi|326503840|dbj|BAK02706.1|	predicted protein [Hordeum vulgare subsp. vulgare]	100.000	0.800995024876	8.52e-30	AAG	K	AAA	K	silent
+query_567940719	gi|357133064|ref|XP_003568148.1|	PREDICTED: protein tesmin/TSO1-like CXC 3 isoform X1 [Brachypodium distachyon]	59.016	0.905472636816	9.25e-14	CAA	Q	TAA	*	nonsense
+query_569696393	gi|475548270|gb|EMT11040.1|	Putative prolyl-tRNA synthetase [Aegilops tauschii]	96.721	0.905472636816	2.60e-33	GTT	V	ATT	I	missense
+query_569696479	gi|475548270|gb|EMT11040.1|	Putative prolyl-tRNA synthetase [Aegilops tauschii]	96.078	0.756218905473	2.55e-26	ACC	T	ATC	I	missense
+query_569697725	gi|475548270|gb|EMT11040.1|	Putative prolyl-tRNA synthetase [Aegilops tauschii]	98.485	0.980099502488	2.54e-26	GCG	A	GCA	A	silent
+query_569698840	gi|728779271|gb|JAF94650.1|	hypothetical protein [Arundo donax]	94.231	0.771144278607	1.96e-32	GGC	G	GGT	G	silent
+query_571712611	gi|473889424|gb|EMS48492.1|	putative anion transporter 7 [Triticum urartu]	100.000	0.995024875622	1.16e-36	GCA	A	GTA	V	missense
+query_571930973	gi|728759163|gb|JAF84611.1|	hypothetical protein [Arundo donax]	64.062	0.92039800995	2.90e-19	CGG	R	TGG	W	missense
+query_573263823	gi|728414420|gb|JAE32495.1|	hypothetical protein [Arundo donax]	85.965	0.845771144279	8.30e-26	ACC	T	ACT	T	silent
+query_573264760	gi|1149812449|ref|XP_020165318.1|	probable xyloglucan glycosyltransferase 7 [Aegilops tauschii subsp. tauschii]	100.000	0.980099502488	3.13e-39	TTC	F	TTT	F	silent
+query_575270872	gi|475624952|gb|EMT32803.1|	50S ribosomal protein L33 [Aegilops tauschii]	100.000	0.756218905473	9.11e-31	GGG	G	GGA	G	silent
+query_576430241	gi|475545186|gb|EMT10453.1|	O-methyltransferase ZRP4 [Aegilops tauschii]	97.015	0.995024875622	5.04e-38	CGA	R	CAA	Q	missense
+query_580604978	gi|475566188|gb|EMT14980.1|	Putative alpha,alpha-trehalose-phosphate synthase (UDP-forming) 7 [Aegilops tauschii]	100.000	0.965174129353	1.78e-38	CGG	R	TGG	W	missense
+query_580606827	gi|475566188|gb|EMT14980.1|	Putative alpha,alpha-trehalose-phosphate synthase (UDP-forming) 7 [Aegilops tauschii]	100.000	0.980099502488	5.75e-40	GAG	E	GAA	E	silent
+query_583512232	gi|1149739009|ref|XP_020193501.1|	kinesin-like protein KIN-14K [Aegilops tauschii subsp. tauschii]	95.455	0.980099502488	6.52e-36	GGT	G	AGT	S	missense
+query_583551871	gi|475577965|gb|EMT17972.1|	Protein cereblon [Aegilops tauschii]	96.875	0.950248756219	4.12e-36	CGG	R	CAG	Q	missense
+query_584732306	gi|474274145|gb|EMS60998.1|	ABC transporter A family member 6 [Triticum urartu]	59.091	0.965174129353	2.18e-16	ATG	M	ATA	I	missense
+query_584732469	gi|1149733070|ref|XP_020191512.1|	ABC transporter A family member 7-like [Aegilops tauschii subsp. tauschii]	98.485	0.980099502488	4.50e-38	CGT	R	TGT	C	missense
+query_584734446	gi|1149733070|ref|XP_020191512.1|	ABC transporter A family member 7-like [Aegilops tauschii subsp. tauschii]	96.552	0.860696517413	3.40e-32	CAC	H	CAT	H	silent
+query_584734459	gi|1149733070|ref|XP_020191512.1|	ABC transporter A family member 7-like [Aegilops tauschii subsp. tauschii]	96.296	0.800995024876	1.54e-29	GCT	A	ACT	T	missense
+query_585287397	gi|473886434|gb|EMS48151.1|	putative glutamyl-tRNA synthetase, cytoplasmic [Triticum urartu]	95.455	0.980099502488	1.97e-37	TGC	C	TGT	C	silent
+query_587655656	gi|1149729559|ref|XP_020190262.1|	probable LRR receptor-like serine/threonine-protein kinase At1g51820, partial [Aegilops tauschii subsp. tauschii]	50.794	0.935323383085	1.99e-07	ATC	I	ATT	I	silent
+query_588475351	gi|1149736284|ref|XP_020192433.1|	kinesin-like protein KIN-14O [Aegilops tauschii subsp. tauschii]	71.186	0.875621890547	5.74e-18	ATC	I	ATT	I	silent
+query_590506329	gi|1149721442|ref|XP_020186635.1|	respiratory burst oxidase homolog protein A-like [Aegilops tauschii subsp. tauschii]	100.000	0.905472636816	1.20e-37	CCC	P	CCT	P	silent
+query_592240773	gi|475562449|gb|EMT14036.1|	DNA polymerase III subunit gamma/tau [Aegilops tauschii]	100.000	0.980099502488	2.28e-43	GTC	V	GTT	V	silent
+query_592846121	gi|473794751|gb|EMS46483.1|	Protein ROS1 [Triticum urartu]	89.394	0.980099502488	2.52e-33	GTG	V	ATG	M	missense
+query_593532710	gi|1142639730|gb|ONM08793.1|	alpha tubulin1 [Zea mays]	100.000	0.980099502488	4.63e-42	CAC	H	CAT	H	silent
+query_593532935	gi|77549557|gb|ABA92354.1|	Tubulin alpha-3 chain, putative, expressed [Oryza sativa Japonica Group]	95.455	0.980099502488	6.47e-42	GTC	V	GTT	V	silent
+query_593532947	gi|992279470|gb|KXG37667.1|	hypothetical protein SORBI_001G107100 [Sorghum bicolor]	98.485	0.980099502488	3.86e-41	TTC	F	TTT	F	silent
+query_593532989	gi|229611053|emb|CAY56112.1|	unnamed protein product [Zea mays]	100.000	0.980099502488	3.62e-41	CGC	R	CGT	R	silent
+query_598296672	gi|475594503|gb|EMT22700.1|	Putative glycerophosphoryl diester phosphodiesterase 3 [Aegilops tauschii]	54.545	0.980099502488	4.11e-12	TTG	L	TTA	L	silent
+query_598734006	gi|728223157|gb|JAD68985.1|	hypothetical protein [Arundo donax]	72.414	0.845771144279	1.41e-22	CTG	L	CTA	L	silent
+query_598735604	gi|475550956|gb|EMT11569.1|	Pentatricopeptide repeat-containing protein [Aegilops tauschii]	89.394	0.980099502488	1.19e-35	GGT	G	AGT	S	missense
+query_598735716	gi|1149760806|ref|XP_020201667.1|	pentatricopeptide repeat-containing protein At3g49240-like [Aegilops tauschii subsp. tauschii]	96.970	0.980099502488	4.78e-38	GGG	G	GGA	G	silent
+query_598735836	gi|1149760806|ref|XP_020201667.1|	pentatricopeptide repeat-containing protein At3g49240-like [Aegilops tauschii subsp. tauschii]	100.000	0.980099502488	1.47e-39	CTC	L	CTT	L	silent
+query_607864536	gi|475555533|gb|EMT12449.1|	Putative phosphoribosylformylglycinamidine synthase, chloroplastic [Aegilops tauschii]	97.015	0.995024875622	5.97e-39	TCT	S	TTT	F	missense
+query_611620125	gi|1149709696|ref|XP_020180925.1|	translocase of chloroplast 120, chloroplastic [Aegilops tauschii subsp. tauschii]	86.275	0.756218905473	2.37e-24	GCG	A	GCA	A	silent
+query_612632083	gi|1149704439|ref|XP_020177280.1|	vesicle transport v-SNARE 13-like [Aegilops tauschii subsp. tauschii]	98.182	0.81592039801	9.11e-32	GGT	G	GAT	D	missense
+query_625643603	gi|326520139|dbj|BAK03994.1|	predicted protein [Hordeum vulgare subsp. vulgare]	98.387	0.92039800995	3.25e-36	CTA	L	TTA	L	silent
+query_625910763	gi|669028060|emb|CDM81731.1|	unnamed protein product [Triticum aestivum]	96.364	0.81592039801	5.18e-26	CGA	R	TGA	*	nonsense
+query_629050758	gi|134290443|gb|ABO70341.1|	Pm3b-like disease resistance protein 15Q1 [Triticum aestivum]	96.970	0.980099502488	1.07e-37	CTG	L	TTG	L	silent
+query_629053561	gi|1149836163|ref|XP_020174464.1|	putative disease resistance protein RGA4 [Aegilops tauschii subsp. tauschii]	90.909	0.980099502488	1.78e-34	CCC	P	CCT	P	silent
+query_631818546	gi|473901606|gb|EMS49198.1|	Fatty acyl-CoA reductase 2 [Triticum urartu]	90.909	0.81592039801	5.30e-29	AAC	N	AAT	N	silent
+query_632520843	gi|1149821979|ref|XP_020169267.1|	disease resistance protein RPM1-like [Aegilops tauschii subsp. tauschii]	86.567	0.995024875622	1.36e-31	GCA	A	GTA	V	missense
+query_632536115	gi|944069512|gb|KQK04996.1|	hypothetical protein BRADI_2g17240 [Brachypodium distachyon]	91.935	0.92039800995	5.76e-34	TCA	S	TTA	L	missense
+query_640532762	gi|1149748683|ref|XP_020197086.1|	putative disease resistance protein RGA1 [Aegilops tauschii subsp. tauschii]	84.848	0.980099502488	1.42e-31	GCG	A	GCA	A	silent
+query_641603802	gi|474250491|gb|EMS60188.1|	Putative disease resistance protein RGA3 [Triticum urartu]	92.424	0.980099502488	1.70e-33	GCT	A	ACT	T	missense
+query_654517208	gi|475578984|gb|EMT18239.1|	ABC transporter F family member 4 [Aegilops tauschii]	98.485	0.980099502488	1.93e-41	TAC	Y	TAT	Y	silent
+query_660517005	gi|475506332|gb|EMT04834.1|	Putative disease resistance protein RXW24L [Aegilops tauschii]	76.271	0.875621890547	1.70e-21	CAC	H	TAC	Y	missense
+query_677016858	gi|1149783966|ref|XP_020154386.1|	uncharacterized protein LOC109739741 isoform X1 [Aegilops tauschii subsp. tauschii]	75.758	0.980099502488	1.79e-20	TGC	C	TGT	C	silent
+query_680374406	gi|1149705408|ref|XP_020178834.1|	DNA damage-binding protein 1 [Aegilops tauschii subsp. tauschii]	100.000	0.935323383085	2.26e-36	GAG	E	GAA	E	silent
+query_687490876	gi|474008494|gb|EMS52457.1|	Zinc finger CCCH domain-containing protein 37 [Triticum urartu]	98.507	0.995024875622	4.41e-39	GGT	G	GAT	D	missense
+query_687492050	gi|475539904|gb|EMT09506.1|	Putative LRR receptor-like serine/threonine-protein kinase [Aegilops tauschii]	96.923	0.965174129353	7.78e-30	CTA	L	TTA	L	silent
+query_687492226	gi|475539904|gb|EMT09506.1|	Putative LRR receptor-like serine/threonine-protein kinase [Aegilops tauschii]	96.721	0.905472636816	2.13e-33	TAC	Y	TAT	Y	silent
