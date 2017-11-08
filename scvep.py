@@ -132,7 +132,8 @@ def processSNPs(_in, args):
                  seq = _seq[pos0 - args.flanksize:pos0], _seq[pos0], _seq[pos0 + 1:pos0 + args.flanksize + 1]
                  """ blast """
                  pr = sub.Popen(BLAST_CMD.format(args.blastdb), shell=True, stdin=sub.PIPE, stderr=sub.PIPE, stdout=sub.PIPE)
-                 out, err = pr.communicate('>query_%s\n%s%s%s\n' % (pos, seq[0], seq[1], seq[2]))
+                 out, err = pr.communicate('>query_{}\n{}{}{}\n'.format(snp.pos, seq[0], seq[1], seq[2]).encode())
+                 out = out.decode()
                  print(out, file=unfiltered_out, flush=True)
 
                  if out.strip():
@@ -161,6 +162,8 @@ if __name__ == '__main__':
     assert args.flanksize > 50
 
     with open(args.vcf) as vcf_in:
+        print("Reading SNPs...")
         snps = readSNPs(vcf_in)
     with open(args.reference) as seq_in:
-        processSNPs(seq_in)
+        print("Processing SNPs...")
+        processSNPs(seq_in, args)
