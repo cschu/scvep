@@ -17,10 +17,12 @@ __maintainer__ = 'Christian Schudoma (cschu)'
 __email__ = 'cschu1981@gmail.com'
 
 # BLAST_DB = os.path.join(os.path.dirname(sys.argv[0]), 'grass_proteins.cd95.fa')
-BLAST_CMD = 'blastx -max_target_seqs 1 -db {} -outfmt "6 std sseqid qstart qend sstart send evalue bitscore qlen slen positive gaps ppos qframe staxids salltitles qseq sseq"'
+# BLAST_CMD = 'blastx -max_target_seqs 1 -db {} -outfmt "6 std sseqid qstart qend sstart send evalue bitscore qlen slen positive gaps ppos qframe staxids salltitles qseq sseq"'
+BLAST_CMD = 'blastx -max_target_seqs 1 -db {} -outfmt "6 std sseqid qlen slen positive gaps ppos qframe salltitles qseq sseq"'
 MARKER_LENGTH = 201
 
-VariantPosition = namedtuple('VariantPosition', 'pos ref alt'.split(' '))
+VariantPosition = namedtuple('VariantPosition', 'seqid pos ref alt'.split(' '))
+BlastHSP = namedtuple('BlastHSP', 'query subject pident length mismatch gapopen qstart qend sstart send evalue bitscore sseqid qlen slen positive gaps ppos qframe salltitles qseq sseq'.split(' '))
 
 codonWheel = { 'AAA': 'K', 'AAC': 'N', 'AAG': 'K', 'AAT': 'N',
                'ACA': 'T', 'ACC': 'T', 'ACG': 'T', 'ACT': 'T',
@@ -40,7 +42,7 @@ codonWheel = { 'AAA': 'K', 'AAC': 'N', 'AAG': 'K', 'AAT': 'N',
                'TTA': 'L', 'TTC': 'F', 'TTG': 'L', 'TTT': 'F', }
 
 def translate(codon):
-    return codonWheel.get(codon.upper().replace('T', 'U'), 'X')
+    return codonWheel.get(codon.upper().replace('U', 'T'), 'X')
 
 def reverseComplement(seq):
     """
@@ -51,7 +53,7 @@ def reverseComplement(seq):
                     for base in seq.upper().replace('U', 'T')])[::-1]
 
 def filterBlastHit(blast_hit, pos_threshold=50, qcov_threshold=0.6, region_length=MARKER_LENGTH):
-    return float(blast_hit[17]) >= pos_threshold and (3 * float(blast_hit[3])) / region_length >= qcov_threshold
+    return int(blast_hit.gaps) == 0 and float(blast_hit.ppos) >= pos_threshold and (3 * float(blast_hit.length)) / region_length >= qcov_threshold
 
 def predictEffect(seq, blast_hit, ref_allele, alt_allele, _out):
     def extractCodon(seq, strand='+'):
@@ -64,16 +66,19 @@ def predictEffect(seq, blast_hit, ref_allele, alt_allele, _out):
         cpos = len(seq[0]) % 3
         if cpos == 0:
             """ |left flank - qstart| is divisible by 3, i.e. SNP starts a new codon """
+            # print(seq[0], seq[1] + seq[2][:2], seq[2][2:], sep='_')
             return seq[1] + seq[2][:2], cpos
         elif cpos == 1:
             """ new codon starts at last position of left flank, SNP center """
+            # print(seq[0][:-1], seq[0][-1] +  seq[1] + seq[2][0], seq[2][1:], sep='_')
             return seq[0][-1] + seq[1] + seq[2][0], cpos
         elif cpos == 2:
             """ SNP is at position 3 of codon """
+            # print(seq[0][:-2], seq[0][-2:] + seq[1], seq[2], sep='_')
             return seq[0][-2:] + seq[1], cpos
 
-    frame = int(blast_hit[18])
-    qstart, qend = sorted(map(int, blast_hit[6:8]))
+    frame = int(blast_hit.qframe)
+    qstart, qend = sorted(map(int, (blast_hit.qstart, blast_hit.qend)))
     # varseq = seq[0] + seq[1] + seq[2]
 
     if qend < qstart:
@@ -92,16 +97,23 @@ def predictEffect(seq, blast_hit, ref_allele, alt_allele, _out):
         """
          now take reverse strand if negative frame was hit
         """
-        seq, strand = tuple(reversed(map(reverseComplement, seq))), '-'
+        seq, strand = tuple(reversed(list(map(reverseComplement, seq)))), '-'        
         ref_allele, alt_allele = map(reverseComplement, [ref_allele, alt_allele])
 
+    # print(*seq, sep='_')
+
+    assert ref_allele == seq[1]
     """ codon extraction s. above """
     codon, cpos = extractCodon(seq, strand)
-    alt_codon = '{}{}{}'.format(codon[0], alt_allele, codon[2])
-    out = [blast_hit[0], blast_hit[12], blast_hit[20], blast_hit[2], abs(float(blast_hit[7])-float(blast_hit[6]))/float(blast_hit[13]), blast_hit[10]]
+    alt_codon = list(codon)
+    alt_codon[cpos] = alt_allele
+    alt_codon = ''.join(alt_codon)
+    # blast_hit[20]
+    out = [blast_hit.query, blast_hit.sseqid, cpos, frame, 'bh[20]', blast_hit.pident, abs(float(blast_hit.qend)-float(blast_hit.qstart))/float(blast_hit.qlen), blast_hit.evalue]
     mclass = 'nonsense' if translate(alt_codon) == '*' else ('missense' if translate(codon) != translate(alt_codon) else 'silent')
     out.extend([codon, translate(codon), alt_codon, translate(alt_codon), mclass])
     print(*out, sep='\t', file=_out, flush=True)
+    # print(*out, sep='\t')
 
 
 def readVariantPositions(_in):
@@ -112,7 +124,7 @@ def readVariantPositions(_in):
 def readSNPs(_in):
     snps = dict()
     for snp in readVariantPositions(_in):
-        snps.setdefault(snp[0], list()).append(VariantPosition(int(snp[1]), snp[3], snp[4]))
+        snps.setdefault(snp[0], list()).append(VariantPosition(snp[0], int(snp[1]), snp[3], snp[4]))
     return snps
 
 def processSNPs(_in, args):
@@ -130,16 +142,18 @@ def processSNPs(_in, args):
                  """
                  pos0 = snp.pos - 1
                  seq = _seq[pos0 - args.flanksize:pos0], _seq[pos0], _seq[pos0 + 1:pos0 + args.flanksize + 1]
+                 assert snp.ref == seq[1]
                  """ blast """
-                 query = '>query_{}\n{}{}{}\n'.format(snp.pos, seq[0], seq[1], seq[2])
+                 query = '>{}:{}:{}{}\n{}{}{}\n'.format(snp.seqid, snp.pos, snp.ref, snp.alt, seq[0], seq[1], seq[2])
                  pr = sub.Popen(BLAST_CMD.format(args.blastdb), shell=True, stdin=sub.PIPE, stderr=sub.PIPE, stdout=sub.PIPE)
-                 print(BLAST_CMD.format(args.blastdb)) 
+                 # print(BLAST_CMD.format(args.blastdb)) 
                  out, err = pr.communicate(query.encode()) 
                  out = out.decode()
                  print(out, file=unfiltered_out, flush=True)
 
                  if out.strip():
-                     blast_hit = out.strip().split('\n')[0].split('\t')
+                     # print(out.strip().split('\n')[0].split('\t'), len(out.strip().split('\n')[0].split('\t')))
+                     blast_hit = BlastHSP(*out.strip().split('\n')[0].split('\t'))
                      if filterBlastHit(blast_hit, region_length=region_length):
                          """
                          only filtered blast hits (qcov>=60%, ppos>=50%) are used for prediction,
