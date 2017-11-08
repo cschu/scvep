@@ -131,8 +131,10 @@ def processSNPs(_in, args):
                  pos0 = snp.pos - 1
                  seq = _seq[pos0 - args.flanksize:pos0], _seq[pos0], _seq[pos0 + 1:pos0 + args.flanksize + 1]
                  """ blast """
+                 query = '>query_{}\n{}{}{}\n'.format(snp.pos, seq[0], seq[1], seq[2])
                  pr = sub.Popen(BLAST_CMD.format(args.blastdb), shell=True, stdin=sub.PIPE, stderr=sub.PIPE, stdout=sub.PIPE)
-                 out, err = pr.communicate('>query_{}\n{}{}{}\n'.format(snp.pos, seq[0], seq[1], seq[2]).encode())
+                 print(BLAST_CMD.format(args.blastdb)) 
+                 out, err = pr.communicate(query.encode()) 
                  out = out.decode()
                  print(out, file=unfiltered_out, flush=True)
 
