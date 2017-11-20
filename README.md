@@ -5,7 +5,7 @@ Annotation-free variant effect prediction for, well, unannotated reference genom
 
 Requires ktio library: pip install ktio (--target /path/to/scvep *IFF* no root/superuser access/own python environment on system) and a local blast+ installation, i.e. blastx in path
 
-===Installation===
+### Installation
 git clone https://github.com/krasileva-group/scvep.git
 cd scvep
 pip install -e .
