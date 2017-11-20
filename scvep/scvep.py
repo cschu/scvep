@@ -164,7 +164,7 @@ def processSNPs(_in, args):
 
 
 
-if __name__ == '__main__':
+def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('vcf', type=str)
     ap.add_argument('reference', type=str)
@@ -183,3 +183,6 @@ if __name__ == '__main__':
     with open(args.reference) as seq_in:
         print("Processing SNPs...")
         processSNPs(seq_in, args)
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,9 @@
+README.rst
+scvep/__main__.py
+scvep/scvep.py
+scvep.egg-info/PKG-INFO
+scvep.egg-info/SOURCES.txt
+scvep.egg-info/dependency_links.txt
+scvep.egg-info/entry_points.txt
+scvep.egg-info/requires.txt
+scvep.egg-info/top_level.txt

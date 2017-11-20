@@ -1,0 +1,19 @@
+Metadata-Version: 1.1
+Name: scvep
+Version: 0.1
+Summary: An annotation-free variant effect predictor
+Home-page: https://github.com/krasileva-group/scvep
+Author: cschu
+Author-email: cschu1981@gmail.com
+License: MIT
+Description: UNKNOWN
+Keywords: SNP bioinformatics variant effect prediction
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Science/Research
+Classifier: Topic :: Scientific/Engineering :: Bio-Informatics
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
